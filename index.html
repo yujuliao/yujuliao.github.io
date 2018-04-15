@@ -1,40 +1,73 @@
 <html>
 <link href="https://github.com/yujuliao" rel="stylesheet" type="text/css">
+<head>
+<script>
+$(document).ready(function(){
+        $("h2").hide();
+        $(".smaller-image").hide();
+        $(".bigger-image").hide();
+        $(".word").hide();
+        $("h2").click(function(){
+        $(".biger-image").fadeOut();
+    });
+});
+</script>
+</head>
 <style>
 .blue-text {
     font-size:50px;
-    color:	#00BFFF;
+    color:  #00BFFF;
     text-align:center;
    font-weight: bold
     font-style: oblique
   }
-  .title{
-  font-family: Calibri , Monospace;   
-  font-size: 35px;
-  color: #20B2AA
-  }
   .context{
+      top:200px;
     font-family: Monospace;
     font-size: 28px;
   }
   .smaller-image {
+    position: relative;
     width: 65px;
-  }
-</style>
- <body background="http://www.kjnyb.com/savepic/img/allimg/1206/5-120601094P7.gif">
-  <h2 class="blue-text">Welcome<img class="smaller-image" src="https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/21067831/IOS/sticker_animation@2x.png"></h2>
 
-  <p class="title">name:</p>
+  }
+  .biger-image {
+    width: 200px;
+    left:500px;
+    line-height:100px;
+  }
+  .word {
+          position: relative;
+          font-size: 28px;
+          left:550px;
+        }
+  .title {
+          font-family: Calibri , Monospace;   
+          color:  #272727;
+          position: relative;
+          font-size: 28px;
+          left:500px;
+        }
+  body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+</style>
+
+  <h2 class="blue-text" id="Header">Welcomwe<img class="smaller-image" src="https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/21067831/IOS/sticker_animation@2x.png"></h2>
+ <body background="http://farm4.static.flickr.com/3492/3176273119_f4bd801966_o.jpg" >
+  <p class="title" >name:</p>
   <ul>
-    <li class="context">廖郁儒</li>
+    <li class="word">廖郁儒</li>
   </ul>
    <p class="title">Click here for <a href="https://github.com/yujuliao" rel="stylesheet" type="text/css">my Github</a>.</p>
    <p class="title">favourite:</p>
-  <ul>
-    <li class="context">novel</li>
-    <li class="context">sleep</li>
-    <li class="context">movie</li>
+  <ul class="word" "="">
+    <li src="http://bpic.588ku.com/element_pic/00/19/97/7856cce29fc42bc.jpg">novel</li>
+    <li >sleep</li>
+    <li >movie</li>
   </ul>
-  <a href="#"><img src="http://rs897.pbsrc.com/albums/ac174/princessMJ795/snoopy/graphics-snoopy-450111.gif~c200" alt="A cute orange cat lying on its back. "></a>
+  <a href="#"><img src="http://rs897.pbsrc.com/albums/ac174/princessMJ795/snoopy/graphics-snoopy-450111.gif~c200" alt="A cute orange cat lying on its back. "  class="biger-image""></a>
   </html>
-
