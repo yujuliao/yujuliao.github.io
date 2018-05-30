@@ -1,102 +1,831 @@
-<html>
-<link href="https://github.com/yujuliao" rel="stylesheet" type="text/css">
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
 <script>
-$(document).ready(function(){
-        $(".context").hide();
-        $(".body").hide();
-        $(".context").hide();
-        $(".biger-image").hide();
-        $(".word ").hide();
-        $(".title").hide();
-        $( "a2" ).mouseover(function() {
-  $( "#log" ).append( "<p>click</p>" );
-});
-    $("a2").click(function(){
-      $("body").addClass("back1");
-        $("body2").fadeOut();
-        $("body").fadeIn();
-        $(".context").fadeIn();
-        $(".biger-image").fadeIn();
-        $(".word ").fadeIn();
-        $(".title").fadeIn();
-    });
-});
+var block=0;
+var price="0";
+var food="0";
+var index=0;
+var index2=0;
+var chose = [1,1,1,1,1,1,1,1,1,1,1,1];
+var drink = [1,1,1,1,0,1,0,0,1,1,1,1];
+var choseblock=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+var eat200 = [1,1,0,0,1,0,0,0,0,1,1,1];
+var final =0;
+var blocktry=0;
+var theblock=0;
+var block2 = 0;
 </script>
-</head>
 
-<style>
-.blue-text {
-    font-size:50px;
-    color: orange;
-    text-align:center;
-   font-weight: bold
-    font-style: oblique
-  }
-  .context{
-      top:200px;
-    font-family: Monospace;
-    font-size: 28px;
-  }
-  .smaller-image {
-    position: relative;
-    width: 65px;
+<span style="font-family: 標楷體; font-size: medium;">區域:</span>
 
-  }
-  .biger-image {
-    width: 200px;
-    top:250;
-    left:300px;
-    line-height:100px;
-  }
-  .word {
-          position: relative;
-          font-size: 28px;
-          left:550px;
-        }
-  .title {
-          font-family: Calibri , Monospace;   
-          color: orange;
-          position: relative;
-          font-size: 28px;
-          left:500px;
-        }
-    .beginpicture{
-      position: relative;
-      width: 300px;
-       position: relative;
-      top:980px;
-        left:-600px;
-  }     
-  .back1{
-            background-image:url('http://farm4.static.flickr.com/3492/3176273119_f4bd801966_o.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-        }
-</style>
-<h2 class="blue-text" id="Header2">Welcomwe</h2>
-<body2>
- <a2 href="#"><img src="http://i266.photobucket.com/albums/ii249/ceomai/put/snoopy-potter/snoopy-potter_103.jpg"  class=
- beginpicture"></a2>
- </body2>
+<form><select name="區域"  id="s1" onchange="blockf(this.value)">
+<option value="0">不限</option>
+<option value="1">514</option>
+<option value="4">小夜市</option>
+<option value="8">後門</option>
+<option value="2">建國一路</option>
+<option value="10">中正路</option><optgroup label="學餐">
+<option value="5">理園</option>
+<option value="9">文園</option>
+<option value="3">輔園</option>
+<option value="7">仁園</option>
+<option value="6">心園</option></optgroup>
+</select>&nbsp;
 
+<span style="font-family: 標楷體; font-size: 1rem;">種類:</span>
+
+</form><form><select name="種類" onchange="Food(this.value)">
+<option value="0">不限</option>
+<option value="2">飲料</option>
+<option value="1">主餐</option>
+</select></form>&nbsp;
+
+<span style="font-family: 標楷體;">價錢:</span>
+
+<form><select name="價錢" onchange="Price(this.value)">
+<option value="0">不限</option>
+<option value="1">100以內</option>
+<option value="2">100以上</option>
+</select></form>
+
+<html>
 <body>
-    
-  <p class="title" >name:</p>
-  <ul>
-    <li class="word">廖郁儒</li>
-  </ul>
-   <p class="title">Click here for <a href="https://github.com/yujuliao" rel="stylesheet" type="text/css">my Github</a>.</p>
-   <p class="title">favourite:</p>
-  <ul class="word" "="">
-    <li src="http://bpic.588ku.com/element_pic/00/19/97/7856cce29fc42bc.jpg">novel</li>
-    <li >sleep</li>
-    <li >movie</li>
-  </ul>
- 
-  <a href="#"><img src="http://rs897.pbsrc.com/albums/ac174/princessMJ795/snoopy/graphics-snoopy-450111.gif~c200" alt="A cute orange cat lying on its back. "  class="biger-image""></a>
- </body>
-  </html>
+
+
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function blockf(v) {
+
+    block = v;
+    document.getElementById("demo").innerHTML = block ; 
+   
+}
+function Food(v) {
+	
+    food = v ;
+    document.getElementById("demo").innerHTML = food ; 
+}
+function Price(v) {
+	
+    price = v ;
+    document.getElementById("demo").innerHTML = price ; 
+}
+function myFunction(){
+//	block2=block;
+	if(food==2 && price==2){
+		alert("none!!!!!!!");
+		//none!!!!!!!!
+		//break;
+	}
+	else{
+		while(final == 0){
+			
+			if(food=="0" && price=="0" && block==0){
+				block=100;
+			}
+			else{
+				if(block == 0){
+					if(price=="2"){
+						block=100000;
+						for(var i=0;i<12;i++){
+							if(eat200[i]==0){
+								chose[i]=0;
+							}
+						}
+					}
+					else if	(food=="2"){
+						block=66666;
+						for(var i=0;i<12;i++){
+							if(drink[i]==0){
+								chose[i]=0;
+							}
+						}
+					}
+					var h;
+					var l=0;
+						for(h=0;h<12;h++){
+							if(chose[h]!=0){
+								choseblock[l]=h;
+								var i=l;
+								l=i+1;
+							}
+						}
+						block=99999999;
+						theblock = Math.floor((Math.random() * 11) + 0);	
+						while(choseblock[theblock]== -1){
+						theblock = Math.floor((Math.random() * 11) + 0);
+						}
+						block=choseblock[theblock];
+					
+				}
+				else{
+					var i=block;
+					block = i-1;
+					block2=block;
+					if(block<3){
+						var x = Math.floor((Math.random() * 2) + 0);
+						if(x==1){
+							block=10+block;
+						}
+					}
+					if(price==2){
+						if(eat200[block]==0){
+							//print no
+							final = 1;
+							 alert("none!!!!!!!");
+						//	break;
+						}
+					}
+					else if	(food==2){
+							if(drink[block]==0){
+								//print no
+								final = 1;
+								alert("none!!!!!!!*****");
+							//	break;
+							} 
+						}	
+					}
+				}
+				if(food==0 && price == 0){//random zone
+					index = Math.floor((Math.random() * 30) + 1);
+				}
+				else if(food==0 && price == 1){
+					var flag = Math.floor((Math.random() * 2) + 1);
+					if(flag==1){
+						index = Math.floor((Math.random() * 20) + 1);
+					}else{
+						index = Math.floor((Math.random() * 5) + 31);
+					}
+				}
+				else if(food==0 && price==2){
+					index = Math.floor((Math.random() * 9) + 21);
+				}
+				else if(food==1 && price==0){
+					index = Math.floor((Math.random() * 30) + 1);
+				}
+				else if(food==1 && price==1){
+					index = Math.floor((Math.random() * 20) + 1);
+				}
+				else if(food==1 && price==2){
+					index = Math.floor((Math.random() * 9) + 21);
+				}
+				else if(food==2 && price==0){
+					index = Math.floor((Math.random() * 5) + 31);
+				}
+				else if(food==2 && price==1){
+					index = Math.floor((Math.random() * 5) + 31);
+				}
+				block2=block;
+				index2=block*35;
+				var t=index2;
+				index2=t+index;
+				var t=block
+				block=t+1;
+        if(index2==1){
+          final=1;
+          alert("雄賀");
+        }
+        else if(index2==2){
+          final=1;
+          alert("泰式");
+        }
+        else if(index2==3){
+          final=1;
+          alert("椒麻雞");
+        }
+        else if(index2==4){
+          final=1;
+          alert("木村");
+        }
+        else if(index2==5){
+          final=1;
+          alert("一加一");
+        }
+        else if(index2==6){
+          final=1;
+          alert("正欣");
+        }
+        else if(index2==7){
+          final=1;
+          alert("蛋蛋");
+        }
+        else if(index2==8){
+          final=1;
+          alert("炭烤");
+        }
+        else if(index2==9){
+          final=1;
+          alert("府城");
+        }
+        else if(index2==10){
+          final=1;
+          alert("八年");
+        }
+        else if(index2==11){
+          final=1;
+          alert("谷庄");
+        }
+        else if(index2==21){
+          final=1;
+          alert("韓");
+        }
+        else if(index2==12){
+          final=1;
+          alert("雞肉捲");
+        }
+        else if(index2==13){
+          final=1;
+          alert("日式大阪燒");
+        }
+        else if(index2==14){
+          final=1;
+          alert("黑金");
+        }
+        else if(index2==15){
+          final=1;
+          alert("嘟嘟");
+        }
+        else if(index2==16){
+          final=1;
+          alert("起司三明治");
+        }
+        else if(index2==22){
+          final=1;
+          alert("以諾");
+        }
+        else if(index2==23){
+          final=1;
+          alert("皮諾丘");
+        }
+        else if(index2==24){
+          final=1;
+          alert("冰糖");
+        }
+        else if(index2==25){
+          final=1;
+          alert("gelato");
+        }
+        else if(index2==31){
+          final=1;
+          alert("icup");
+        }
+        else if(index2==32){
+          final=1;
+          alert("平豆");
+        }
+        else if(index2==33){
+          final=1;
+          alert("想食");
+        }
+        else if(index2==26){
+          final=1;
+          alert("牛排");
+        }
+        else if(index2==27){
+          final=1;
+          alert("想初");
+        }
+        else if(index2==36){
+          final=1;
+          alert("豬食堂");
+        }
+        else if(index2==66){
+          final=1;
+          alert("50嵐");
+        }
+        else if(index2==67){
+          final=1;
+          alert("Comebuy");
+        }
+        else if(index2==68){
+          final=1;
+          alert("一芳水果茶");
+        }
+        else if(index2==56){
+          final=1;
+          alert("麵屋三郎");
+        }
+        else if(index2==57){
+          final=1;
+          alert("八鍋");
+        }
+        else if(index2==58){
+          final=1;
+          alert("超越牛排");
+        }
+        else if(index2==37){
+          final=1;
+          alert("麥味登");
+        }
+        else if(index2==69){
+          final=1;
+          alert("茶湯會");
+        }
+        else if(index2==70){
+          final=1;
+          alert("康青龍");
+        }
+        else if(index2==38){
+          final=1;
+          alert("勁牛肉麵館");
+        }
+        else if(index2==39){
+          final=1;
+          alert("周師傅");
+        }
+        else if(index2==40){
+          final=1;
+          alert("紅豆餅");
+        }
+        else if(index2==41){
+          final=1;
+          alert("滷味");
+        }
+        else if(index2==42){
+          final=1;
+          alert("壽司10元");
+        }
+        else if(index2==43){
+          final=1;
+          alert("老葉牛肉麵");
+        }
+        else if(index2==44){
+          final=1;
+          alert("晨花早餐");
+        }
+        else if(index2==45){
+          final=1;
+          alert("雞蛋糕");
+        }
+        else if(index2==59){
+          final=1;
+          alert("五路鍋聖");
+        }
+        else if(index2==46){
+          final=1;
+          alert("無骨鵝肉飯");
+        }
+        else if(index2==47){
+          final=1;
+          alert("好味麵疙瘩");
+        }
+        else if(index2==48){
+          final=1;
+          alert("傻瓜麵");
+        }
+        else if(index2==49){
+          final=1;
+          alert("港口廣東粥");
+        }
+        else if(index2==50){
+          final=1;
+          alert("毓品香");
+        }
+        else if(index2==51){
+          final=1;
+          alert("輔大越南美食");
+        }
+        else if(index2==52){
+          final=1;
+          alert("幸福廚房");
+        }
+        else if(index2==53){
+          final=1;
+          alert("烤匠");
+        }
+        else if(index2==54){
+          final=1;
+          alert("蒸餃");
+        }
+        else if(index2==55){
+          final=1;
+          alert("永和豆漿大王");
+        }
+        else if(index2==56){
+          final=1;
+          alert("食全池上便當");
+        }
+        else if(index2==71){
+          final=1;
+          alert("食福炒飯");
+        }
+        else if(index2==72){
+          final=1;
+          alert("天喜肉燥");
+        }
+        else if(index2==73){
+          final=1;
+          alert("新纖戀果");
+        }
+        else if(index2==74){
+          final=1;
+          alert("八方雲集");
+        }
+        else if(index2==75){
+          final=1;
+          alert("新羅韓國");
+        }
+        else if(index2==76){
+          final=1;
+          alert("廚師豬排");
+        }
+        else if(index2==77){
+          final=1;
+          alert("雲瀚哨子麵");
+        }
+        else if(index2==78){
+          final=1;
+          alert("新東家滷味");
+        }
+        else if(index2==79){
+          final=1;
+          alert("補");
+        }
+        else if(index2==101){
+          final=1;
+          alert("綵緹");
+        }
+        else if(index2==106){
+          final=1;
+          alert("廣東粥");
+        }
+        else if(index2==107){
+          final=1;
+          alert("咖哩28號");
+        }
+        else if(index2==108){
+          final=1;
+          alert("輔大上手滷味");
+        }
+        else if(index2==109){
+          final=1;
+          alert("燒臘便當");
+        }
+        else if(index2==110){
+          final=1;
+          alert("蔥抓餅");
+        }
+        else if(index2==111){
+          final=1;
+          alert("好風味");
+        }
+        else if(index2==112){
+          final=1;
+          alert("小夜市雞排");
+        }
+        else if(index2==113){
+          final=1;
+          alert("輔大鐵板快炒");
+        }
+        else if(index2==114){
+          final=1;
+          alert("角落覓食");
+        }
+        else if(index2==115){
+          final=1;
+          alert("彌勒");
+        }
+        else if(index2==116){
+          final=1;
+          alert("上海湯包");
+        }
+        else if(index2==117){
+          final=1;
+          alert("媽媽味飯糰");
+        }
+        else if(index2==118){
+          final=1;
+          alert("滷肉飯");
+        }
+        else if(index2==119){
+          final=1;
+          alert("趙媽媽");
+        }
+        else if(index2==120){
+          final=1;
+          alert("來吃飽");
+        }
+        else if(index2==121){
+          final=1;
+          alert("羹麵");
+        }
+        else if(index2==122){
+          final=1;
+          alert("串烤");
+        }
+        else if(index2==136){
+          final=1;
+          alert("青蛙");
+        }
+        else if(index2==137){
+          final=1;
+          alert("飲喬伊");
+        }
+        else if(index2==138){
+          final=1;
+          alert("水果攤");
+        }
+        else if(index2==141){
+          final=1;
+          alert("食代粒糧");
+        }
+        else if(index2==142){
+          final=1;
+          alert("皇品小棧");
+        }
+        else if(index2==161){
+          final=1;
+          alert("角子虎");
+        }
+        else if(index2==162){
+          final=1;
+          alert("路易斯小廚：義大利麵");
+        }
+        else if(index2==176){
+          final=1;
+          alert("心園自助餐");
+        }
+        else if(index2==177){
+          final=1;
+          alert("心園麵食");
+        }
+        else if(index2==206){
+          final=1;
+          alert("心園果汁");
+        }
+        else if(index2==178){
+          final=1;
+          alert("心園水果");
+        }
+        else if(index2==179){
+          final=1;
+          alert("心園巧瑋鬆餅");
+        }
+        else if(index2==211){
+          final=1;
+          alert("仁園自助餐");
+        }
+        else if(index2==212){
+          final=1;
+          alert("仁園麵食");
+        }
+        else if(index2==246){
+          final=1;
+          alert("今炭號");
+        }
+        else if(index2==247){
+          final=1;
+          alert("?牛堡");
+        }
+        else if(index2==281){
+          final=1;
+          alert("趙班長海苔飯捲");
+        }
+        else if(index2==282){
+          final=1;
+          alert("娃子");
+        }
+        else if(index2==283){
+          final=1;
+          alert("阿關");
+        }
+        else if(index2==284){
+          final=1;
+          alert("歐爸韓式食堂");
+        }
+        else if(index2==285){
+          final=1;
+          alert("一品香自助餐");
+        }
+        else if(index2==311){
+          final=1;
+          alert("咖啡知道");
+        }
+        else if(index2==336){
+          final=1;
+          alert("靴子義大利餐館");
+        }
+        else if(index2==337){
+          final=1;
+          alert("荷亞");
+        }
+        else if(index2==338){
+          final=1;
+          alert("趣初拉麵");
+        }
+        else if(index2==316){
+          final=1;
+          alert("麻辣小品");
+        }
+        else if(index2==339){
+          final=1;
+          alert("v+ing");
+        }
+        else if(index2==317){
+          final=1;
+          alert("餘味");
+        }
+        else if(index2==340){
+          final=1;
+          alert("新食堂");
+        }
+        else if(index2==341){
+          final=1;
+          alert("南洋風味料理");
+        }
+        else if(index2==346){
+          final=1;
+          alert("清心");
+        }
+        else if(index2==347){
+          final=1;
+          alert("橘?子");
+        }
+        else if(index2==318){
+          final=1;
+          alert("柒燒屋");
+        }
+        else if(index2==319){
+          final=1;
+          alert("永和豆漿大王");
+        }
+        else if(index2==342){
+          final=1;
+          alert("新濟州韓式豆腐鍋");
+        }
+        else if(index2==351){
+          final=1;
+          alert("十堂");
+        }
+        else if(index2==352){
+          final=1;
+          alert("阿關");
+        }
+        else if(index2==353){
+          final=1;
+          alert("雪城");
+        }
+        else if(index2==354){
+          final=1;
+          alert("早安美芝城");
+        }
+        else if(index2==355){
+          final=1;
+          alert("蔥抓餅");
+        }
+        else if(index2==381){
+          final=1;
+          alert("水果阿姨");
+        }
+        else if(index2==382){
+          final=1;
+          alert("果之霸");
+        }
+        else if(index2==383){
+          final=1;
+          alert("iFresh");
+        }
+        else if(index2==371){
+          final=1;
+          alert("陶花園");
+        }
+        else if(index2==372){
+          final=1;
+          alert("歐趴義廚");
+        }
+        else if(index2==373){
+          final=1;
+          alert("紅鬍子手工披薩");
+        }
+        else if(index2==374){
+          final=1;
+          alert("義維諾");
+        }
+        else if(index2==375){
+          final=1;
+          alert("安東尼");
+        }
+        else if(index2==376){
+          final=1;
+          alert("歐姆先生");
+        }
+        else if(index2==377){
+          final=1;
+          alert("惹拉麵");
+        }
+        else if(index2==378){
+          final=1;
+          alert("Thepizza");
+        }
+        else if(index2==379){
+          final=1;
+          alert("古米特");
+        }
+        else if(index2==380){
+          final=1;
+          alert("貓故事和食坊");
+        }
+        else if(index2==386){
+          final=1;
+          alert("金廚自助餐");
+        }
+        else if(index2==416){
+          final=1;
+          alert("大苑子");
+        }
+        else if(index2==406){
+          final=1;
+          alert("名廚鐵板燒");
+        }
+        else if(index2==407){
+          final=1;
+          alert("魚多甜");
+        }
+        else if(index2==387){
+          final=1;
+          alert("重慶酸辣粉");
+        }
+        else if(index2==388){
+          final=1;
+          alert("醇滷味");
+        }
+        else if(index2==389){
+          final=1;
+          alert("泰巢麵食館");
+        }
+        else if(index2==390){
+          final=1;
+          alert("老吳牛肉麵店");
+        }
+        else if(index2==391){
+          final=1;
+          alert("阿山哥飯麵");
+        }
+        else if(index2==392){
+          final=1;
+          alert("雞蛋仔");
+        }
+        else if(index2==393){
+          final=1;
+          alert("赤炸一番");
+        }
+        else if(index2==394){
+          final=1;
+          alert("典廚原汁牛肉麵");
+        }
+        else if(index2==395){
+          final=1;
+          alert("東璋美味");
+        }
+        else if(index2==396){
+          final=1;
+          alert("iFresh");
+        }
+        else if(index2==397){
+          final=1;
+          alert("台南鱔魚麵");
+        }
+        else if(index2==398){
+          final=1;
+          alert("蔥抓餅");
+        }
+        else if(index2==399){
+          final=1;
+          alert("松子創鹹酥雞");
+        }
+        else if(index2==400){
+          final=1;
+          alert("大牛比椒辣");
+        }
+        else if(index2==401){
+          final=1;
+          alert("健康紅燒滷味");
+        }
+        else if(index2==402){
+          final=1;
+          alert("滷都香");
+        }
+
+		//		final = 1;
+		}
+	}
+
+	document.getElementById("demo").innerHTML = block ; 
+	document.getElementById("demo2").innerHTML = block2 ; 
+	document.getElementById("demo3").innerHTML =index2;
+
+	freeset();
+}
+function freeset(){
+	block=0;
+	final = 0;
+	var s = document.getElementById("s1");
+	s.selectedIndex = 0; 
+}
+</script>
+
+</body>
+</html>
