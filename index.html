@@ -1,6 +1,53 @@
-<p id="demo"></p>
-<p id="demo2"></p>
-<p id="demo3"></p>
+<html>
+<body background="1.png">
+  <a class="result" id="myAnchor" href="http://www.microsoft.com" >Microsoft</a>
+<style>
+        
+        .pos1 {
+          position: relative;
+          top:-640px;
+          left:750px;
+        }
+        .pos2 {
+          position: relative;
+          top:-635px;
+          left:750px;
+        }
+        .pos {
+          position: relative;
+          top:-640px;
+          left:750px;
+        }
+        .pos4 {
+          position: relative;
+          top:-554px;
+          left:775px;
+        }
+        .result {
+          position: relative;
+          top:750px;
+          left:530px;
+          font-size: 80px;
+        }
+       .til {
+          position: relative;
+          top:-200px;
+          font-family: Harrington, MonospaceS;
+          font-size: 100px;
+        }
+        .nn {
+          position: relative;
+          top:-280px;
+        }
+
+
+       
+
+</style>
+<center>
+<p  class="til">Gashapon</p>
+<img class="nn" src="123.png">
+</center>
 <script>
 var block=0;
 var price="0";
@@ -15,11 +62,14 @@ var final =0;
 var blocktry=0;
 var theblock=0;
 var block2 = 0;
+var src="no";
+document.getElementById("myAnchor").innerHTML = src;
+document.getElementById("myAnchor").href = "https://www.w3schools.com";
 </script>
 
-<span style="font-family: 標楷體; font-size: medium;">區域:</span>
+<span style="font-family: 標楷體; font-size: medium; " class="pos1">區域:</span>
 
-<form><select name="區域"  id="s1" onchange="blockf(this.value)">
+<form><select class="pos" name="區域"   id="s1" onchange="blockf(this.value)">
 <option value="0">不限</option>
 <option value="1">514</option>
 <option value="4">小夜市</option>
@@ -32,29 +82,25 @@ var block2 = 0;
 <option value="7">仁園</option>
 <option value="6">心園</option></optgroup>
 </select>&nbsp;
+<br>
+<span style="font-family: 標楷體; font-size: 1rem;" class="pos2">種類:</span>
 
-<span style="font-family: 標楷體; font-size: 1rem;">種類:</span>
-
-</form><form><select name="種類" onchange="Food(this.value)">
+</form><form><select name="種類" class="pos" onchange="Food(this.value)">
 <option value="0">不限</option>
 <option value="2">飲料</option>
 <option value="1">主餐</option>
 </select></form>&nbsp;
 
-<span style="font-family: 標楷體;">價錢:</span>
+<span style="font-family: 標楷體;" class="pos">價錢:</span>
 
-<form><select name="價錢" onchange="Price(this.value)">
+<form><select name="價錢" onchange="Price(this.value)" class="pos">
 <option value="0">不限</option>
 <option value="1">100以內</option>
 <option value="2">100以上</option>
 </select></form>
 
-<html>
-<body>
 
-
-
-<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()" class="pos4">Try it</button>
 
 <script>
 function blockf(v) {
@@ -244,7 +290,7 @@ function myFunction(){
           final=1;
           alert("黑金");
         }
-        else if(index2==15){
+        else if(index2==34){
           final=1;
           alert("嘟嘟");
         }
@@ -813,9 +859,6 @@ function myFunction(){
 		}
 	}
 
-	document.getElementById("demo").innerHTML = block ; 
-	document.getElementById("demo2").innerHTML = block2 ; 
-	document.getElementById("demo3").innerHTML =index2;
 
 	freeset();
 }
@@ -824,6 +867,8 @@ function freeset(){
 	final = 0;
 	var s = document.getElementById("s1");
 	s.selectedIndex = 0; 
+  chose = [1,1,1,1,1,1,1,1,1,1,1,1];
+  choseblock=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 }
 </script>
 
