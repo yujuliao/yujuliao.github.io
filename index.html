@@ -53,15 +53,15 @@
         }
         .result {
           position: relative;
-          top:100px;
-          left:100px;
-          font-size: 150px;
+          top:-500px;
+          left:700px;
+          font-size: 70px;
         }
         .result2 {
           position: relative;
-          top:100px;
-          left:100px;
-          font-size: 150px;
+          top:-500px;
+          left:700px;
+          font-size: 70px;
         }
 	 .ba {
           position: relative;
@@ -110,6 +110,7 @@ var block2 = 0;
 var times = 0;
 var ldrink=0;
 var tii=0;
+var nothing=0;
 var tii2;
 var src="no";
 document.getElementById("myAnchor").innerHTML = src;
@@ -153,10 +154,6 @@ document.getElementById("myAnchor").href = "https://www.w3schools.com";
 </div>
 
 <script>
-function timedMsg()
- {
- var t=setTimeout("myFunction()",2000)
- }
 function blockf(v) {
 
     block = v;
@@ -175,14 +172,16 @@ function Price(v) {
 }
 function myFunction(){
 //  block2=block;
-document.getElementById("myAnchor2").innerHTML ="";
-document.getElementById("myAnchor").innerHTML ="";
+document.getElementById("myAnchor2").innerHTML =" ";
+document.getElementById("myAnchor").innerHTML =" ";
   if(food==2 && price==2){
+    nothing=1;
+    document.getElementById("myAnchor2").innerHTML ="no";
     document.getElementById("myAnchor").innerHTML ="no";
-document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/熊賀炒飯/";
-    alert("none!!!!!!!");
-    //none!!!!!!!!
-    //break;
+    document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/map/";
+
+ //   alert("none!!!!!!!");
+   
   }
   else{
     while(final == 0){
@@ -196,6 +195,7 @@ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter
         }
         var s = block2;
         block2= s-1;
+        block=0;
       }
       else{
         if(block == 0){
@@ -229,14 +229,13 @@ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter
         //    while(choseblock[theblock]== -1){
             theblock = Math.floor((Math.random() * ldrink) + 0);
         //    }
-            if(theblock>11){
-              block=1
+            if(theblock>12){
+              block=1;
             }
             else{
             block=choseblock[theblock];
               }
-        //    document.getElementById("myAnchor3").innerHTML =theblock;
-         //   block=0;
+
         }
         else{
           var i=block;
@@ -252,9 +251,11 @@ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter
             if(eat200[block]==0){
               //print no
               final = 1;
+              nothing=1;
               document.getElementById("myAnchor").innerHTML ="no";
- document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/熊賀炒飯/";
-               alert("none!!!!!!!");
+              document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/map/";
+            //  freeset();
+          //     alert("none!!!!!!!");
             //  break;
             }
           }
@@ -262,9 +263,11 @@ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter
               if(drink[block]==0){
                 //print no
                 final = 1;
+                nothing=1
                 document.getElementById("myAnchor").innerHTML ="no";
- document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/熊賀炒飯/";
-                alert("none!!!!!!!");
+                  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/map/";
+                //  freeset();
+           //     alert("none!!!!!!!");
               //  break;
               } 
             } 
@@ -306,7 +309,8 @@ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter
         var t=block;
         block=t+1;
       }
-      if(index2==1){
+
+if(index2==1){
   final=1;
  document.getElementById("myAnchor").innerHTML ="熊賀炒飯";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/熊賀炒飯/";
@@ -355,7 +359,7 @@ else if(index2==10 || index2==11){
   final=1;
  document.getElementById("myAnchor").innerHTML ="八年得麻辣豆腐";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/八年得麻辣專賣店/";
-}
+}   
 else if(index2==35){
   final=1;
  document.getElementById("myAnchor").innerHTML ="谷庄奶茶";
@@ -431,18 +435,13 @@ else if(index2==26 || index2==29){
  document.getElementById("myAnchor").innerHTML ="豪客來牛排店";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/豪客來牛排店/";
 }
-else if(index2==27 || index==28){
+else if(index2==27 || index2==28){
   final=1;
  document.getElementById("myAnchor").innerHTML ="想初。享廚";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/想初%E3%80%82享廚/";
 }
-  
-      /*else if(index2>=65 && index2<=70 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="2";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      } */
-      else if(index2==36){
+
+else if(index2==36){
   final=1;
  document.getElementById("myAnchor").innerHTML ="豬食堂";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/豬食堂/";
@@ -587,7 +586,6 @@ else if(index2==55){
  document.getElementById("myAnchor").innerHTML ="永和豆漿大王";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%BB%BA%E5%9C%8B%E4%B8%80%E8%B7%AF/%E6%B0%B8%E5%92%8C%E8%B1%86%E6%BC%BF%E5%A4%A7%E7%8E%8B/";
 }
-
 else if(index2==71 || index2==81 || index2==80){
   final=1;
  document.getElementById("myAnchor").innerHTML ="食福炒飯";
@@ -739,58 +737,377 @@ else if(index2==138){
  document.getElementById("myAnchor").innerHTML ="水果攤";
  document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%b0%8f%e5%a4%9c%e5%b8%82/%e5%b0%8f%e5%a4%9c%e5%b8%82%e6%b0%b4%e6%9e%9c%e6%94%a4/";
 }
+else if(index2>=141 && index2 <=150){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="食代粒糧";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e7%90%86%e5%9c%92/%e9%a3%9f%e4%bb%a3%e7%b2%92%e9%87%8f/";
+}
+else if(index2>=151 &&  index2<=160){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="皇品小棧";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e7%90%86%e5%9c%92/%e7%9a%87%e5%93%81%e5%b0%8f%e6%a3%a7/";
+}
+else if(index2>=161 && index2<=165 ){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="角子虎";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e7%90%86%e5%9c%92/%e8%a7%92%e5%ad%90%e8%99%8e/";
+}
+else if(index2>=166 && index2<=170 ){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="路易斯小廚：義大利麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e7%90%86%e5%9c%92/%e8%b7%af%e6%98%93%e6%96%af%e5%b0%8f%e5%bb%9a%ef%bc%9a%e7%be%a9%e5%a4%a7%e5%88%a9%e9%ba%b5/";
+}
+else if(index2>=176 && index2<=180 ){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="心園自助餐";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e5%bf%83%e5%9c%92/%e5%bf%83%e5%9c%92%e8%87%aa%e5%8a%a9%e9%a4%90/";
+}
+else if(index2>=181 && index2<=185){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="心園麵食";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e5%bf%83%e5%9c%92/%e5%bf%83%e5%9c%92%e9%ba%b5%e9%a3%9f/";
+}
+else if(index2>=206 && index2<=210){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="心園果汁";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e5%bf%83%e5%9c%92/%e5%bf%83%e5%9c%92%e6%9e%9c%e6%b1%81/";
+}
+else if(index2>=186 && index2<=190){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="心園水果";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e5%bf%83%e5%9c%92/%e5%bf%83%e5%9c%92%e6%b0%b4%e6%9e%9c/";
+}
+else if(index2>=191 && index2<=195){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="心園巧瑋鬆餅";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e5%bf%83%e5%9c%92/%e5%bf%83%e5%9c%92%e5%b7%a7%e7%91%8b%e9%ac%86%e9%a4%85/";
+}
+else if(index2>=211 && index2 <=220){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="仁園自助餐";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e4%bb%81%e5%9c%92/%e4%bb%81%e5%9c%92%e8%87%aa%e5%8a%a9%e9%a4%90/";
+}
+else if(index2>=221 && index2 <=230){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="仁園麵食";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e4%bb%81%e5%9c%92/%e4%bb%81%e5%9c%92%e9%ba%b5%e9%a3%9f/";
+}
+else if(index2>=246 && index2 <=255){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="今炭號";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%be%8c%e9%96%80/%e4%bb%8a%e7%82%ad%e8%99%9f/";
+}
+else if(index2>=256 && index2 <=265){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="犇牛堡";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%be%8c%e9%96%80/%e7%8a%87%e7%89%9b%e5%a0%a1/";
+}
+else if(index2==281){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="趙班長海苔飯捲";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e8%b6%99%e7%8f%ad%e9%95%b7%e6%b5%b7%e8%8b%94%e9%a3%af%e6%8d%b2/";
+}
+else if(index2==282){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="娃子複合式餐飲";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e6%96%87%e5%9c%92/%e5%a8%83%e5%ad%90%e8%a4%87%e5%90%88%e5%bc%8f%e9%a4%90%e9%a3%b2/";
+}
+else if(index2==283){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="阿關";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e6%96%87%e5%9c%92/%e9%98%bf%e9%97%9c/";
+}
+else if(index2==284){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="歐爸韓式食堂";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e6%96%87%e5%9c%92/%e6%ad%90%e7%88%b8%e9%9f%93%e5%bc%8f%e9%a4%90%e9%a3%b2/";
+}
+else if(index2==285){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="一品香自助餐";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%e5%ad%b8%e9%a4%90/%e6%96%87%e5%9c%92/%e4%b8%80%e5%93%81%e9%a6%99%e8%87%aa%e5%8a%a9%e9%a4%90/";
+}
 
-      else if(index2>=170 && index2<=175 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="5";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=205 && index2<=210 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="6";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=240 && index2<=245 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="7";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=275 && index2<=280){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="8";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=310 && index2<=315 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="10";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=345 && index2<=350 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="11";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-      else if(index2>=380 && index2<=385 ){
-      final=1;
-      document.getElementById("myAnchor").innerHTML ="12";
-      document.getElementById("myAnchor2").href ="https://www.w3schools.com";
-      }
-    }
-  
+else if(index2==311){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="咖啡知道";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/學餐/文園/咖啡知道/";
+}
+else if(index2==336){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="靴子義大利餐館";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/靴子義大利餐館/";
+}
+else if(index2==337){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="荷亞";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/荷亞/";
+}
+else if(index2==338){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="趣初拉麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/趣初拉麵/";
+}
+else if(index2==316){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="麻辣小品";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/麻辣小品/";
+}
+else if(index2==339){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="v+ing";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/v+ing/";
+}
+else if(index2==317){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="餘味";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/餘味/";
+}
+else if(index2==340){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="新食堂";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/新食堂/";
+}
+else if(index2==341){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="南洋風味料理";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/南洋風味料理/";
+}
+else if(index2==346){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="清心";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/清心/";
+}
+else if(index2==347){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="橘菓子";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/橘?子/";
+}
+else if(index2==318){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="柒燒屋";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/柒燒屋/";
+}
+else if(index2==319){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="永和豆漿大王";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/永和豆漿大王/";
+}
+else if(index2==342){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="新濟州韓式豆腐鍋";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/中正路/新濟州韓式豆腐鍋/";
+}
+else if(index2==351){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="十堂";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/十堂/";
+}
+else if(index2==352){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="阿關";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/阿關/";
+}
+else if(index2==353){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="雪城";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/雪城/";
+}
+else if(index2==354){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="早安美芝城";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/早安美芝城/";
+}
+else if(index2==355){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="蔥抓餅";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/蔥抓餅/";
+}
+else if(index2==381){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="水果阿姨";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/水果阿姨/";
+}
+else if(index2==382){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="果之霸";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/果之霸/";
+}
+else if(index2==383){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="iFresh";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/iFresh/";
+}
+else if(index2==371){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="陶花園";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/陶花園/";
+}
+else if(index2==372){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="歐趴義廚";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/歐趴義廚/";
+}
+else if(index2==373){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="紅鬍子手工披薩";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/紅鬍子手工披薩/";
+}
+else if(index2==374){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="義維諾";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/義維諾/";
+}
+else if(index2==375){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="安東尼";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/安東尼/";
+}
+else if(index2==376){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="歐姆先生";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/歐姆先生/";
+}
+else if(index2==377){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="惹拉麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/惹拉麵/";
+}
+else if(index2==378){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="Thepizza";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/Thepizza/";
+}
+else if(index2==379){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="古米特";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/古米特/";
+}
+else if(index2==380){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="貓故事和食坊";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/貓故事和食坊/";
+}
+else if(index2==386){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="金廚自助餐";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/金廚自助餐/";
+}
+else if(index2==416){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="大苑子";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/大苑子/";
+}
+else if(index2==406){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="名廚鐵板燒";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/名廚鐵板燒/";
+}
+else if(index2==407){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="魚多甜";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/魚多甜/";
+}
+else if(index2==387){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="重慶酸辣粉";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/重慶酸辣粉/";
+}
+else if(index2==388){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="醇滷味";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/醇滷味/";
+}
+else if(index2==389){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="泰巢麵食館";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/泰巢麵食館/";
+}
+else if(index2==390){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="老吳牛肉麵店";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/老吳牛肉麵店/";
+}
+else if(index2==391){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="阿山哥飯麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/阿山哥飯麵/";
+}
+else if(index2==392){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="雞蛋仔";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/雞蛋仔/";
+}
+else if(index2==393){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="赤炸一番";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/赤炸一番/";
+}
+else if(index2==394){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="典廚原汁牛肉麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/典廚原汁牛肉麵/";
+}
+else if(index2==395){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="東璋美味";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/東璋美食坊/";
+}
+else if(index2==396){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="iFresh";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/iFresh-金桔檸檬專賣店/";
+}
+else if(index2==397){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="台南鱔魚麵";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/台南鱔魚麵/";
+}
+else if(index2==398){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="蔥抓餅";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/蔥抓餅/";
+}
+else if(index2==399){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="松子創鹹酥雞";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/松子創鹹酥雞/";
+}
+else if(index2==400){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="大牛比椒辣";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/大牛比椒辣/";
+}
+else if(index2==401){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="健康紅燒滷味";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/健康紅燒滷味/";
+}
+else if(index2==402){
+  final=1;
+ document.getElementById("myAnchor").innerHTML ="滷都香";
+ document.getElementById("myAnchor").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/建國一路/滷都香/";
+}
+
+
+
+  }//endwhile
+
+}
 if(block2==0 ||block2==10 ){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="514";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/514-2/";
 }
 else if(block2==3){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="小夜市";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%B0%8F%E5%A4%9C%E5%B8%82/";
 }
 else if(block2==7){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="後門";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%BE%8C%E9%96%80/";
 }
 else if(block2==1 ||block2==11){
   final=1;
@@ -815,20 +1132,24 @@ else if(block2==8){
 else if(block2==2){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="輔園";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%AD%B8%E9%A4%90/%E8%BC%94%E5%9C%92/";
 }
 else if(block2==6){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="仁園";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%AD%B8%E9%A4%90/%E4%BB%81%E5%9C%92/";
 }
 else if(block2==5){
   final=1;
  document.getElementById("myAnchor2").innerHTML ="心園";
- document.getElementById("myAnchor2").href ="https://www.w3schools.com";
+ document.getElementById("myAnchor2").href ="http://wordpress-foodmap.7e14.starter-us-west-2.openshiftapps.com/%E5%AD%B8%E9%A4%90/%E5%BF%83%E5%9C%92/";
 }
-
+//document.getElementById("myAnchor2").innerHTML =block2;
+if(nothing==1){
+  document.getElementById("myAnchor2").innerHTML ="no";
+  document.getElementById("myAnchor").innerHTML ="ne";
 }
+document.getElementById("myAnchor3").innerHTML =index2;
 freeset();
 tii2=tii;
 tii=tii2+1;
@@ -838,7 +1159,7 @@ tii=tii2+1;
 
 
 function freeset(){
-
+  nothing=0;
   block=0;
   final = 0;
   var s = document.getElementById("s1");
@@ -852,6 +1173,8 @@ function freeset(){
   chose = [1,1,1,1,1,1,1,1,1,1,1,1];
   choseblock=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
   block2 = 0;
+  index =0;
+  block=0;
   ldrink =0;
 }
 </script>
